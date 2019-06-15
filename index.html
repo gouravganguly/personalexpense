@@ -73,7 +73,7 @@
         const expenseTableEl = document.querySelector("#expenseTable");
 
 
-        const allExpenses = [];
+        let allExpenses = [];
 
         function addExpenseToTotal() {
             const expenseItem = {};
@@ -112,8 +112,9 @@
             //        newArr.push(allExpenses[i])
             //    }
             // }
-            const newArr = allExpenses.filter(expense => expense.moment.valueOf() !== dateValue);
+            let newArr = allExpenses.filter(expense => expense.moment.valueOf() !== dateValue);
             renderList(newArr);
+            allExpenses = [...newArr];
              
         }
 
